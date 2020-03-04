@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">*NgIf</h5>
+                        <hr />
+                        <div *ngIf="mostrar" class="mb-3">
+                            <span class="font-weight-bold">
+                                {{ info.title }}
+                            </span>
+                            <p class="card-text">
+                                {{ info.text }}
+                            </p>
+                        </div>
+                        <button
+                            (click)="mostrar = !mostrar"
+                            class="btn btn-outline-primary btn-block"
+                        >
+                            {{ mostrar ? 'Hiden' : 'Mostrar ' }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">*NgFor</h5>
+                        <hr />
+                        <ul class="list-group">
+                            <li
+                                *ngFor="
+                                    let character of characters;
+                                    let i = index
+                                "
+                                class="list-group-item"
+                            >
+                                {{ i + 1 }} - {{ character }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
